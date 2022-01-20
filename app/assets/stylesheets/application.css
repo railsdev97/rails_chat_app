@@ -14,3 +14,9 @@
  *= require_tree .
  *= require_self
  */
+
+ #page-content {
+   min-height: calc(100vh - 144px);
+   padding-top: 25px;
+   padding-bottom: 30px;
+ }
