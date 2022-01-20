@@ -16,7 +16,5 @@
  */
 
  #page-content {
-   min-height: calc(100vh - 144px);
-   padding-top: 25px;
-   padding-bottom: 30px;
+   min-height: calc(100vh - 123.5px);
  }
