@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :require_user_redirect, only: [:new]
 
   def new
   end
@@ -18,7 +19,12 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:notice] = "Logged out"
-    redirect_to root_path
+    redirect_to login_path
   end
+
+  private
+    def require_user_redirect
+      redirect_to root_path if logged_in?
+    end
   
 end
