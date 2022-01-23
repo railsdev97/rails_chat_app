@@ -21,11 +21,11 @@
         <div class="card-header text-center fw-bold">
           Chat Room
         </div>
-        <div class="card-body">
+        <div class="card-body" id="msg-container">
           <%= render @messages %>
         </div>
         <div class="card-footer">
-          <%= form_with model: @message, url: message_path, class:"input-group flex-nowrap" do |f| %>
+          <%= form_with model: @message, url: message_path, remote: :true, class:"input-group flex-nowrap" do |f| %>
             <%= f.text_field :body, placeholder:"Type something...", class:"form-control" %>
             <%= f.button class:"input-group-text bg-info", id:"addon-wrapping" do %>
               <i class="bi bi-send"></i>

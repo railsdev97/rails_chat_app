@@ -11,5 +11,18 @@ consumer.subscriptions.create("ChatroomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
+    // alert(`${data.username}: ${data.body}`)
+    $('#msg-container').append(
+      `<div class="card-text">
+        <b>${data.username}:</b>&ensp; ${data.body}
+      </div>`
+    );
+    scroll_bottom();
   }
 });
+
+function scroll_bottom() {
+  if ($('#msg-container').length > 0) {
+    $('#msg-container').scrollTop($('#msg-container')[0].scrollHeight);
+  }
+}
